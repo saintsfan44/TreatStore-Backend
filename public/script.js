@@ -5,38 +5,60 @@ const candyPage = document.querySelector('.candyPage');
 const candyBtn = document.querySelector('.btn');
 let  carts = document.querySelectorAll('.add-Cart');
 
+let products = [];
+
 async function getProducts() {
     const response = await axios.get('http://localhost:5000/products');
-    console.log(response);
+    console.log(response.data);
+    products = response.data.products
+
+    populateProducts();
 }
 getProducts();
 
-// let products = [
-//     {
-//         name: 'Candy Apples',
-//         tag: 'candyapples',
-//         price: 15,
-//         inCart: 0
-//     },
-//     {
-//         name: 'Candy Grapes',
-//         tag: 'grapes',
-//         price: 15,
-//         inCart: 0
-//     },
-//     {
-//         name: 'Bear Box',
-//         tag: 'bearbox',
-//         price: 15,
-//         inCart: 0
-//     },
-//     {
-//         name: 'Candy Oreos',
-//         tag: 'candyoreos',
-//         price: 15,
-//         inCart: 0
-//     }
-// ]
+function populateProducts() {
+    const container = document.querySelector('.candy-main');
+
+    const productsHtml = products.map( (product, i) => {
+        return (
+            `
+            <div class="custom-card">
+          <div class="card-top">
+            <img src="${product.image}" alt="${product.description}" class="card-img">
+          </div>
+
+          <div class="card-bottom">
+            <h2 class="item-name">${product.name}</h2>
+            <div class="btn">
+              <button class="add-Cart">Add to Cart</button>
+            </div>
+            <p class="item-Description">${product.description}</p>
+            <p class="price">${product.price}</p>
+          </div>
+        </div>
+            `
+        )
+
+    })
+
+    if(container) {
+        container.innerHTML += productsHtml.toString()
+    }
+
+    addCartAction();
+}
+
+function addCartAction() {
+    let carts = document.querySelectorAll('.add-Cart');
+
+    for(let i=0; i < carts.length; i++) {
+        carts[i].addEventListener('click', () => {
+            cartNumbers(products[i]);
+            totalCost(products[i]);
+            console.log("added to cart");
+        })
+    }
+}
 
 /**************************************/
 /**************************************/

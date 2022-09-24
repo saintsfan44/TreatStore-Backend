@@ -1,4 +1,4 @@
-exports.productsList = [
+exports.productList = [
     {
         name: 'Candy Apples',
         description: 'candy apple description',
@@ -30,5 +30,14 @@ exports.productsList = [
         price: 15,
         inCart: 0,
         image: '/Images/oreocupcakes.jpg'
+    },
+    {
+        name: 'Toy Box',
+        description: 'toy box description',
+        tag: 'toys',
+        price: 20,
+        inCart: 0,
+        image: '/Images/toys.jpg'
     }
+
 ]

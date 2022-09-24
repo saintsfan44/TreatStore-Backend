@@ -7,9 +7,9 @@
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: "c-header c-header c-header c-header"
-                         "c-sidebar c-main c-main c-main"
-                         "c-sidebar c-main c-main c-main"
-                         "c-sidebar c-main c-main c-main"
+                         "c-main c-main c-main c-main"
+                         "c-main c-main c-main c-main"
+                         "c-main c-main c-main c-main"
                          "c-footer c-footer c-footer c-footer";
     grid-gap: 1rem;
 }
