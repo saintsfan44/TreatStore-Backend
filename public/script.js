@@ -1,5 +1,5 @@
 
-
+let stage = 'dev';
 const mainContainer = document.querySelector('.container');
 const candyPage = document.querySelector('.candyPage');
 const candyBtn = document.querySelector('.btn');
@@ -8,7 +8,8 @@ let  carts = document.querySelectorAll('.add-Cart');
 let products = [];
 
 async function getProducts() {
-    const response = await axios.get('https://clownfish-app-l9fo7.ondigitalocean.app/products');
+    const host = stage === 'dev' ? 'http://localhost:5000' : 'https://clownfish-app-l9fo7.ondigitalocean.app'
+    const response = await axios.get(`${host}/products`);
     console.log(response.data);
     products = response.data.products
 

@@ -24,9 +24,9 @@ exports.productList = [
         image: '/Images/bearbox.jpg'
     },
     {
-        name: 'Candy Oreos',
-        description: 'candy oreos description',
-        tag: 'candyoreos',
+        name: 'Oreo Cupcake',
+        description: 'oreo cupcake description',
+        tag: 'oreocupcakes',
         price: 15,
         inCart: 0,
         image: '/Images/oreocupcakes.jpg'
