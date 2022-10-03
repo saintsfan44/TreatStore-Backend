@@ -1,4 +1,3 @@
-
 let stage = 'dev';
 const mainContainer = document.querySelector('.container');
 const candyPage = document.querySelector('.candyPage');

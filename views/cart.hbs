@@ -12,15 +12,18 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="Title-bar">
-        <header>
-          <h1 class="Title">Pretty Pastries</h1>
-          <div class="cart-box">
-            <div class="cart-icon"><button class="cart-button" role="button"><i
-                  class="fa-solid fa-cart-shopping"></i><span class="cart-items">0</span></button></div>
-            </div>
-        </header>
-    </div>
+    <div class="header">
+    <h1>Pretty Pastries</h1>
+    <p>Resize the browser window to see the effect.</p>
+  </div>
+  
+  <div class="topnav">
+     <a href="/index">Home</a>
+    <a href="/candy">Store</a>
+    <a href="#">Link</a>
+    <a href="/cart" style="float:right"><i
+      class="fa-solid fa-cart-shopping"></i><span class="cart-items">0</span></a>
+  </div>
 
     <div class="products-container">
             <div class="product-header">
@@ -32,9 +35,15 @@
             <div class="products">
     
             </div>
+            <div class="butBtnCtn">
+                <button id="startCheckout" class="startCheckout">
+                    startCheckout
+                </button>
+            </div> 
     </div>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.js" integrity="sha512-rozBdNtS7jw9BlC76YF1FQGjz17qQ0J/Vu9ZCFIW374sEy4EZRbRcUZa2RU/MZ90X2mnLU56F75VfdToGV0RiA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/script.js"></script>
+    <script src="/payment.js"></script>
 </body>
 </html>

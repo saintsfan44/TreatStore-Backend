@@ -10,10 +10,10 @@ exports.productList = [
     {
         name: 'Candy Grapes',
         description: 'candy grapes description',
-        tag: 'grapes',
+        tag: 'candygrapes',
         price: 15,
         inCart: 0,
-        image: '/Images/grapes.jpg'
+        image: '/Images/candygrapes.jpg'
     },
     {
         name: 'Bear Box',
@@ -24,7 +24,7 @@ exports.productList = [
         image: '/Images/bearbox.jpg'
     },
     {
-        name: 'Oreo Cupcake',
+        name: 'Oreo Cupcakes',
         description: 'oreo cupcake description',
         tag: 'oreocupcakes',
         price: 15,
@@ -34,10 +34,10 @@ exports.productList = [
     {
         name: 'Toy Box',
         description: 'toy box description',
-        tag: 'toys',
+        tag: 'toybox',
         price: 20,
         inCart: 0,
-        image: '/Images/toys.jpg'
+        image: '/Images/toybox.jpg'
     }
 
 ]

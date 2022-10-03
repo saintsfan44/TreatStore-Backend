@@ -1,121 +1,105 @@
-.container {
-    max-width: 80%;
-    height: 100vh;
-    background-color: #efefef;
-    display: grid;
-    grid-template-rows: repeat(5, 1fr);
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "header header header header"
-                         "sidebar main main main"
-                         "sidebar main main main"
-                         "sidebar box-1 box-2 box-3"
-                         "footer footer footer footer";
-    grid-gap: 1rem;
-}
-
-.container div {
-    /* background-color: royalblue;  */
-    font-size: 1.5rem;
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial;
+    padding: 10px;
+    background: #f1f1f1;
+  }
+  
+  /* Header/Blog Title */
+  .header {
+    padding: 30px;
     text-align: center;
-    padding: 1rem;
-    color: #fff;
-}
-
-
-header {
-    grid-area: header;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    height: 12vh;
-    background-image: linear-gradient(purple, white);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.Title {
-    align-self: center;
-}
-
-.cart-box {
-    display: flex;
-    position: absolute;
-    left: 72%;
-    top: 25%;
-}
-
-.cart-button {
-    all: unset;
-}
-
-
-.cart-items {
-    margin-left: 20px;
-}
-
-.sidebar {
-    grid-area: sidebar;
-    background-color: lightgray;
-    display: flex;
-    flex-direction: column;
-}
-
-.about-me {
+    background-image: linear-gradient(purple, white)
+  }
+  
+  .header h1 {
+    font-size: 50px;
+  }
+  
+  /* Style the top navigation bar */
+  .topnav {
+    overflow: hidden;
+    background-color: purple;
+  }
+  
+  /* Style the topnav links */
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change color on hover */
+  .topnav a:hover {
+    background-color: white;
     color: black;
-    font-size: 15;
-}
-
-
-
-.carousel-inner {
-    object-fit: cover;
-    
-    
-}
-
-.carousel-item {
-    height: 600px;
-}
-
-.carousel {
-    max-width: 80%;
-    margin: auto;
-    position: relative;
-}
-
-.main {
-   grid-area: main;
-}
-
-.box-1 {
-    grid-area: box-1;
-   
-}
-
-.box-2 {
-    grid-area: box-2;
-    
-}
-
-.box-3 {
-    grid-area: box-3;
-}
-
-.footer {
-    grid-area: footer;
-    background-image: linear-gradient(white, purple);
-    border: 1px  black;
-    
-    
-}
-
-.img-fluid {
-    width: 200px;
-    height: 300px;
-    object-fit: contain;
-}
+  }
+  
+  /* Create two unequal columns that floats next to each other */
+  /* Left column */
+  .leftcolumn {   
+    float: left;
+    width: 75%;
+  }
+  
+  /* Right column */
+  .rightcolumn {
+    float: left;
+    width: 25%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+  }
+  
+  /* Fake image */
+  .fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Add a card effect for articles */
+  .card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 20px;
+    text-align: center;
+    background-image: linear-gradient(purple, white);
+    margin-top: 20px;
+  }
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+      width: 100%;
+      padding: 0;
+    }
+  }
+  
+  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+  @media screen and (max-width: 400px) {
+    .topnav a {
+      float: none;
+      width: 100%;
+    }
+  }
    
 
 .card {
@@ -137,7 +121,7 @@ header {
     max-width: 650px;
     justify-content: space-around;
     margin: 0 auto;
-    margin-top: 500px;
+    margin-top: 100px;
     
 }
 
@@ -215,4 +199,24 @@ h5 {
 
 .fa-plus, .fa-minus {
     cursor: pointer;
+}
+
+.buyBtnCtn {
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.startCheckout {
+    padding: 10px 20px;
+    background-color: purple;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    transition: all 0,5s ease-in-out;
+}
+
+.startCheckout:hover {
+    background-color: rgb(254, 5, 254);
 }
