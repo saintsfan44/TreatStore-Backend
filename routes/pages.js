@@ -8,4 +8,8 @@ router.get('/', homeCtrlFunction);
 router.get('/cart', cartCtrlFunction);
 router.get('/candy', candyCtrlFunction);
 
+
+
+
+
 module.exports = router;

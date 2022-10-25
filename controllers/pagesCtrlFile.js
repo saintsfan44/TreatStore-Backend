@@ -9,3 +9,6 @@ exports.cartCtrlFunction = (req, res) => {
 exports.candyCtrlFunction = (req, res) => {
     res.render('candy');
 }
+
+
+

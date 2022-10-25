@@ -7,7 +7,7 @@ let  carts = document.querySelectorAll('.add-Cart');
 let products = [];
 
 async function getProducts() {
-    const host = stage === 'dev' ? 'http://localhost:5000' : 'https://clownfish-app-l9fo7.ondigitalocean.app'
+    const host = stage === 'dev' ? 'http://localhost:5000' : 'https://pretty-pastries.shop'
     const response = await axios.get(`${host}/products`);
     console.log(response.data);
     products = response.data.products
@@ -22,20 +22,24 @@ function populateProducts() {
     const productsHtml = products.map( (product, i) => {
         return (
             `
-            <div class="custom-card">
-          <div class="card-top">
-            <img src="${product.image}" alt="${product.description}" class="card-img">
-          </div>
-
-          <div class="card-bottom">
-            <h2 class="item-name">${product.name}</h2>
-            <div class="btn">
-              <button class="add-Cart">Add to Cart</button>
-            </div>
-            <p class="item-Description">${product.description}</p>
-            <p class="price">${product.price}</p>
-          </div>
-        </div>
+            <div class="product-card">
+		<div class="badge">Hot</div>
+		<div class="product-tumb">
+			<img src=${product.image} alt="">
+		</div>
+		<div class="product-details">
+			<span class="product-catagory">Candy</span>
+			<h4><a href="">${product.name}</a></h4>
+			<p>${product.description}</p>
+			<div class="product-bottom-details">
+				<div class="product-price">${product.price}</div>
+				<div class="product-links">
+					<a href="#"><i class="fa fa-heart"></i></a>
+					<button class="add-Cart"><i class="fa fa-shopping-cart"></i></button>
+				</div>
+			</div>
+		</div>
+	</div>
             `
         )
 
