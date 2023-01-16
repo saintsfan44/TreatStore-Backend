@@ -1,5 +1,6 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_kEY);
 const { productList } = require('../products');
+const Email = require('../utils/email');
 
 exports.checkoutCtrlFunction = async (req, res) => {
     try {
@@ -47,7 +48,8 @@ exports.checkoutCtrlFunction = async (req, res) => {
             shipping_address_collection: {
                 allowed_countries: ['US', 'GB']
             },
-            line_items: productsToBuy()
+            line_items: productsToBuy(),
+            mode: 'payment'
 
         });
 
@@ -58,4 +60,42 @@ exports.checkoutCtrlFunction = async (req, res) => {
     } catch (error) {
         console.log(error);
     }
+}
+
+exports.cartSuccessFunction = (req, res) => {
+    res.render('thankyouPage');
+}
+
+exports.finishOrder = async (req, res) => {
+    const session = await stripe.checkout.sessions.retrieve(
+        req.params.id
+    )
+
+    console.log("My payment was: ");
+    console.log(session);
+
+    if(session.payment_status === "paid") {
+        const purchasedProducts = session.display_items.map(product => (
+            {
+                productName: product.custom.name,
+                price: product.amount / 100,
+                quantity: product.quantity
+            }
+        ))
+        //save transaction into database
+
+        //send and email
+        await new Email({
+            name: session.shipping.name,
+            email: session.customer_details.email
+        }, purchasedProducts, session.amount_total).sendThankYou();
+
+        return res.status(200).json({
+            success:true
+        })
+    }
+
+    res.staus(200).json({
+        success: false
+    })
 }

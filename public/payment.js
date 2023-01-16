@@ -39,6 +39,12 @@ async function buyProducts(cartProducts) {
         })
 
         console.log(response.data);
+
+        localStorage.setItem('sessionId', response.data.session.id);
+
+        await stripe.redirectToCheckout({
+            sessionId: response.data.session.id
+        })
     } catch (error) {
        
     }

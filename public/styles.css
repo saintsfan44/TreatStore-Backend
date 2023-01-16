@@ -220,3 +220,22 @@ h5 {
 .startCheckout:hover {
     background-color: rgb(254, 5, 254);
 }
+
+/*---------------CHECKOUT SUCCESS ----------------*/
+
+.checkoutSuccessCtn {
+  background-color: rgb(224, 224, 224);
+  text-align: center;
+  padding: 40px;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.checkoutSuccessCtn h1 {
+  margin-bottom: 10px;
+}
+
+.checkoutSuccessCtn {
+  margin-bottom: 10px;
+  font-size: 20px;
+}

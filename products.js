@@ -5,7 +5,8 @@ exports.productList = [
         tag: 'candyapples',
         price: 15,
         inCart: 0,
-        image: '/Images/candyapples.jpg'
+        image: 'https://treatstore.files.fra1.digitaloceanspaces.com/candyapples.jpg'
+        //'/Images/candyapples.jpg'
     },
     {
         name: 'Candy Grapes',
@@ -13,7 +14,7 @@ exports.productList = [
         tag: 'candygrapes',
         price: 15,
         inCart: 0,
-        image: '/Images/candygrapes.jpg'
+        image: 'https://treatstore.files.fra1.digitaloceanspaces.com/candygrapes.jpg'
     },
     {
         name: 'Bear Box',
@@ -21,7 +22,7 @@ exports.productList = [
         tag: 'bearbox',
         price: 15,
         inCart: 0,
-        image: '/Images/bearbox.jpg'
+        image: 'https://treatstore.files.fra1.digitaloceanspaces.com/bearbox.jpg'
     },
     {
         name: 'Oreo Cupcakes',
@@ -29,7 +30,7 @@ exports.productList = [
         tag: 'oreocupcakes',
         price: 15,
         inCart: 0,
-        image: '/Images/oreocupcakes.jpg'
+        image: 'https://treatstore.files.fra1.digitaloceanspaces.com/oreo%20cupcakes.jpg'
     },
     {
         name: 'Toy Box',
@@ -37,7 +38,7 @@ exports.productList = [
         tag: 'toybox',
         price: 20,
         inCart: 0,
-        image: '/Images/toybox.jpg'
+        image: 'https://treatstore.files.fra1.digitaloceanspaces.com/toybox.jpg'
     }
 
 ]
